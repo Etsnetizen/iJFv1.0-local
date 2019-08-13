@@ -1,0 +1,86 @@
+{% extends "common/layout_main.html" %}
+{% block content %}
+{% include "common/tab_account.html" %}
+<div class="row m-t">
+	<div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="m-b-md">
+					<a class="btn btn-outline btn-primary pull-right" href="{{ buildUrl('/set') }}?id={{info.id}}">
+                        <i class="fa fa-pencil"></i>添加备注
+                    </a>
+					<h2>报障单信息</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 text-center">
+                <img class="img-circle circle-border" src="{{ buildStaticUrl('/images/common/avatar.png') }}" width="100px" height="100px">
+            </div>
+            <div class="col-lg-10">
+                <p class="m-t">序号：{{info.id}}</p>
+                <p>姓名：{{info.name}}</p>
+                <p>手机号：{{info.mobile}}</p>
+                <p>地址：{{info.address}}</p>
+                <p>期望处理时间：{{info.except_time}}</p>
+                <p>描述：{{info.description}}</p>
+                <p>无法处理原因：{{info.unable_deal_reason}}</p>
+                <p>备注：{{info.remark}}</p>
+                <p>状态：{{info.status}}</p>
+                <p>报障时间：{{info.created_time}}</p>
+            </div>
+        </div>
+        <div class="row m-t">
+            <div class="col-lg-12">
+                <div class="panel blank-panel">
+                    <div class="panel-heading">
+                        <div class="panel-options">
+                            <ul class="nav nav-tabs">
+                                <li class="active">
+                                    <a href="javascript:void(0);" data-toggle="tab" aria-expanded="false">处理记录</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="tab-content">
+                            <div class="tab-pane active">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>操作</th>
+                                            <th>处理人id</th>
+                                            <th>时间</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <!--模板循环-->
+                                    {% if list %}
+                                        {% for item in list %}
+                                                <tr>
+                                                    {% if item.change_remark == None  %}
+                                                        <td>将状态改为:{{ item.operation }}</td>
+                                                    {% else %}
+                                                    <td>{{ item.operation }}:{{ item.change_remark }}</td>
+                                                    {% endif %}
+                                                    <td>{{ item.uid }}</td>
+                                                    <td>{{ item.created_time }}</td>
+                                                </tr>
+                                        {% endfor %}
+                                    {% else %}
+									    <tr><td colspan="2">暂无数据</td></tr>
+                                    {% endif %}
+                                     </tbody>
+                                </table>
+
+                                <!--统一分页代码-->
+                                {%include "common/pagenation.html" %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+{% endblock %}

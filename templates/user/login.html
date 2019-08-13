@@ -1,0 +1,49 @@
+{% extends "common/layout_user.html" %}<!--此模板为jinja模板，并不是标准的html，所以可用manager的url管理器-->
+{% block content %}
+<!--此页面继承layout_user.html，也就是统一布局那个页面（侧边栏统一布局
+）-->
+<div class="loginColumns animated fadeInDown">
+	<div class="row">
+
+		<div class="col-md-6 text-center">
+			<h2 class="font-bold">{{ config.SEO_TITLE }}</h2>
+			<p>
+				<img src="{{ buildStaticUrl('/images/common/mini_qrcode.jpg') }}" width="300px">
+			</p>
+            <p class="text-danger">
+                扫描关注查看Demo
+            </p>
+		</div>
+		<div class="col-md-6">
+			<div class="ibox-content">
+				<!--这里修改了，原语句为<form class="m-t" role="form" action="{{ buildUrl('/user/login') }}" method="post">-->
+				<div class="m-t login_wrap" role="form"><!--role告诉机器这是一个表单,包含了一个按钮-->
+                    <div class="form-group text-center">
+                        <h2 class="font-bold">登录</h2><!--h2为小标题h1>h2>h3>h4-->
+                    </div>
+					<div class="form-group">
+						<input type="text" name="login_name" class="form-control" id="name" placeholder="请输入登录用户名">
+					</div>
+					<div class="form-group">
+						<input type="password" name="login_pwd" class="form-control" id="pwd"  placeholder="请输入登录密码">
+					</div>
+					<button type="button" class="btn btn-primary block full-width m-b do-login">登录</button>
+                </div><!--上面btn btn-prinmary .. m-b 都是配置前端页面显示的文件，不用理, do-login 是新建的一个class,
+                       同理，login-wrap也是-->
+			</div>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-md-6">
+            {{ config.SEO_TITLE }} <a href="{{ buildUrl('/') }}" target="_blank"> 技术支持 </a>
+		</div>
+		<div class="col-md-6 text-right">
+			<small>© 2018</small>
+		</div>
+	</div>
+</div>
+{% endblock %}
+{% block js %}
+<script src="{{ buildStaticUrl('/js/user/login.js')}}"></script>
+{% endblock %}

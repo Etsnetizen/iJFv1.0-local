@@ -1,0 +1,130 @@
+{% extends "common/layout_main.html" %}
+
+{% block content %}
+{% include "common/tab_account.html" %}
+
+<div class="row">
+    <div class="col-lg-12">
+        <form class="form-inline wrap_search">
+            <div class="row m-t p-w-m">
+                <div class="form-group">
+                    <select name="status" class="form-control inline">
+                        <option value="-1">请选择状态</option>
+                        {% for tmp_key in status_mapping %}<!--如果当前查询的-->
+                            <option value="{{tmp_key}}"{% if tmp_key == search_con['status'] %} selected {% endif %}>{{status_mapping[tmp_key]}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">                                                                       <!--这里jscommit了name为mix_kw的
+                                                                                                                     参数传给了后端flask的req，为req['mix_kw]-->
+                        <input type="text" name="mix_kw" placeholder="请输入姓名或者手机号码" class="form-control" value="{{search_con['mix_kw']}}">
+                        <input type="hidden" name="p" value="{{search_con['p']}}">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-primary search"><!--拿按钮的class
+                            并不是下面<i>这个class-->
+                                <i class="fa fa-search"></i>搜索
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-lg-12">
+                    <a class="btn btn-w-m btn-outline btn-primary pull-right"
+                       href="{{ buildUrl('/account/set') }}">
+                        <i class="fa fa-plus"></i>手动添加报障
+                    </a>
+                </div>
+            </div>
+        </form>
+        <table class="table table-bordered m-t">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>手机号</th>
+                <th>地址</th>
+                <th>期望处理时间</th>
+                <th>描述</th>
+                <th>无法处理的原因</th>
+                <th>备注</th>
+                <th>状态</th>
+                <th>报障时间</th>
+                <th>操作</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <!--模板循环-->
+            {% if list %}
+                {% for item in list %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.mobile }}</td>
+                <td>{{ item.address }}</td>
+                <td>{{ item.except_time }}</td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.unable_deal_reason }}</td>
+                <td>{{ item.remark }}</td>
+                <td>{{ item.status_desc }}</td>
+                <td>{{ item.created_time }}</td>
+                <td>
+                    <a href="{{ buildUrl('/info') }}?id={{item.id}}">
+                        <i class="fa fa-eye fa-lg"></i>
+                    </a>
+
+                    <a class="m-l" href="{{ buildUrl('/set') }}?id={{item.id}}">
+                        <i class="fa fa-book fa-lg"></i><!--添加备注-->
+                    </a>
+
+
+
+
+
+
+                    {% if item.status == 1 %}
+                    <!--如果是报障·已完成，有撤销已完成状态和添加备注两个功能-->
+                    <a class="m-l recover" href="javascript:void(0);"data ="{{item.id}}">
+                        <i class="fa fa-rotate-left fa-lg"></i>
+                    </a> <!--可撤销-->
+                    {% else %}
+                    <a class="m-l finish" href="javascript:void(0);"data ="{{item.id}}">
+                        <i class="fa fa-check fa-lg"></i>
+                    </a>
+
+                    <a class="m-l unfinished" href="javascript:void(0);"data ="{{item.id}}">
+                        <i class="fa fa-remove fa-lg"></i>
+                    </a>
+
+                    <a class="m-l delay" href="javascript:void(0);"data ="{{item.id}}">
+                        <i class="fa fa-clock-o fa-lg"></i>
+                    </a>
+
+                    <a class="m-l processing" href="javascript:void(0);"data ="{{item.id}}">
+                        <i class="fa fa-check-square fa-lg"></i>
+                    </a>
+                    {% endif %}
+                </td>
+            </tr>
+                {% endfor %}
+            {% else %}
+                <tr><td colspan="5">暂无数据</td> </tr>
+            {%endif%}
+            </tbody>
+        </table>
+        <div type="hidden" class="2 reference-box "><!--这个是被隐藏的输入框-->
+                    <input type="hidden" name="uid" value="{{current_user.uid}}">
+				    </div>
+        <!--分页代码已被封装到统一模板文件中-->
+        {%include "common/pagenation.html" %}
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{{ buildStaticUrl('/js/report/index.js')}}"></script>
+{% endblock %}
+
