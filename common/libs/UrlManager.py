@@ -15,3 +15,12 @@ class UrlManager(object):
         ver = "%s"%( int(time.time()) ) if not release_version else release_version
         path = '/static' + path + "?ver=" + ver
         return UrlManager.buildUrl( path )
+
+    """图片上传url地址管理，url地址为：域名+图片前缀（prefix_url+file_key）"""
+
+    @staticmethod
+    def buildImageUrl(path):
+        app_config = app.config['APP']
+        url = app_config['domain'] + app.config['UPLOAD']['prefix_url'] + path
+        return url
+

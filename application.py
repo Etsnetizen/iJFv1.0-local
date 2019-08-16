@@ -15,10 +15,8 @@ db = SQLAlchemy()
 app = Application(__name__,root_path=os.getcwd() )
 manager = Manager(app)
 
-"""
-函数模板
-"""
 
 from common.libs.UrlManager import UrlManager
 app.add_template_global(UrlManager.buildStaticUrl,'buildStaticUrl')#注册一个全局的模板urlmanager，可在所有文件中使用，包括html
 app.add_template_global(UrlManager.buildUrl,'buildUrl')
+app.add_template_global(UrlManager.buildImageUrl,'buildImageUrl')

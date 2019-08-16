@@ -1,5 +1,5 @@
 from application import app
-from flask import request,redirect,g#g是flask存储当前登陆用户信息的模块
+from flask import request,redirect,g
 from common.models.User import User
 from common.libs.user.UserService import UserService
 from common.libs.UrlManager import UrlManager

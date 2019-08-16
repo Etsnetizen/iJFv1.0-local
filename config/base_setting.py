@@ -42,6 +42,23 @@ STATUS_MAPPING = {
     '-7':'处理中'
 }
 
+ATTRIBUTE_MAPPING = {
+    '1':'老师',
+    '0':'学生'
+}
 
+MINA_APP = {
+    'appid':'wx323469d8c2921db3',
+    'appkey':'d861f7f3a525cecfbb37fe816ed24c52'
+}
+
+API_IGNORE_URLS = [
+    "^/api"
+]
+UPLOAD = {
+    'ext':['jpg','gif','bmp','jpeg','png'],
+    'prefix_path':'/static/upload/',#上传图片存放的磁盘地址
+    'prefix_url':'/static/upload/'#网络地址前缀
+}
 
 

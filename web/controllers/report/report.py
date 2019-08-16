@@ -18,13 +18,15 @@ def index():
     page = int(req['p']) if ('p' in req and req['p']) else 1
     query = Report.query
 
-
     if 'mix_kw' in req:
         rule = or_( Report.name.ilike( "{0}".format( req['mix_kw']))
                     ,Report.mobile.ilike( "{0}".format(req['mix_kw'])))
         query = query.filter( rule )
-    if 'status' in req and int(req['status']) in [1,0,-1,-2,-9,-8,-7]:
-        query = query.filter(Report.status == int(req['status']))
+    if 'status' in req and int(req['status']) in [1,0,-9,-8,-7]:
+        query = query.filter(Report.status == req['status'])
+
+
+
 
     page_params = {
         'total':query.count(),

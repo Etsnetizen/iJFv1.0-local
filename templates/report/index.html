@@ -43,10 +43,11 @@
             <thead>
             <tr>
                 <th>序号</th>
+                <th>属性</th>
                 <th>姓名</th>
                 <th>手机号</th>
                 <th>地址</th>
-                <th>期望处理时间</th>
+                <th>学号</th>
                 <th>描述</th>
                 <th>无法处理的原因</th>
                 <th>备注</th>
@@ -60,18 +61,20 @@
             <!--模板循环-->
             {% if list %}
                 {% for item in list %}
-            <tr>
-                <td>{{ item.id }}</td>
-                <td>{{ item.name }}</td>
-                <td>{{ item.mobile }}</td>
-                <td>{{ item.address }}</td>
-                <td>{{ item.except_time }}</td>
-                <td>{{ item.description }}</td>
-                <td>{{ item.unable_deal_reason }}</td>
-                <td>{{ item.remark }}</td>
-                <td>{{ item.status_desc }}</td>
-                <td>{{ item.created_time }}</td>
-                <td>
+                    {% if item.attribute != -1 and item.status != -1%}
+                        <tr>
+                            <td>{{ item.id }}</td>
+                            <td >{{ item.attribute_desc }}</td>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.mobile }}</td>
+                            <td>{{ item.address }}</td>
+                            <td>{{ item.student_id }}</td>
+                            <td>{{ item.description }}</td>
+                            <td>{{ item.unable_deal_reason }}</td>
+                            <td>{{ item.remark }}</td>
+                            <td>{{ item.status_desc }}</td>
+                            <td>{{ item.created_time }}</td>
+                            <td>
                     <a href="{{ buildUrl('/info') }}?id={{item.id}}">
                         <i class="fa fa-eye fa-lg"></i>
                     </a>
@@ -109,6 +112,7 @@
                     {% endif %}
                 </td>
             </tr>
+                    {% endif %}
                 {% endfor %}
             {% else %}
                 <tr><td colspan="5">暂无数据</td> </tr>
