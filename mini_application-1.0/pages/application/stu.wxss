@@ -1,0 +1,41 @@
+.container{
+  padding: 2rem;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+.input{
+  font-size: 0.7rem;
+  color: #ccc;
+  flex-grow: 3;
+  border: 1px;
+  display: inline-block;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 0.15rem #0080ff;
+  padding: 0.3rem;
+}
+
+.inputbox{
+  width: 700rpx;
+  height: 50rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  margin-top: 10rpx;
+}
+
+
+.textarea {
+  width: 700rpx;
+  height: 500rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  margin-top: 10rpx;
+}
+
+.submitbtn{
+  width: 650rpx;
+  height: 100rpx;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

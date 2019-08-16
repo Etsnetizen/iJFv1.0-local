@@ -1,0 +1,10 @@
+<!--index.wxml-->
+
+  <view class='developing'>
+  <image src='/images/developing.png'></image>
+  </view>
+
+  <view class='dev-text'>
+  <text>敬请期待</text>
+  </view>
+

@@ -1,0 +1,9 @@
+<!--index.wxml-->
+
+  <view class='developing'>
+  <image src='/images/finish.jpg' ></image>
+  </view>
+
+<view class='main'>你的报障已成功提交</view>
+<view class='main'>我们的工作人员将会在7天内联系你</view>
+

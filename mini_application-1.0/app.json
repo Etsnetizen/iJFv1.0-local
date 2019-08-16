@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/application/index",
+    "pages/application/stu",
+    "pages/application/tea",
+    "pages/application/finish",
+    "pages/multiunit/index",
+    "pages/my/index",
+    "pages/my/order_list",
+    "pages/my/about"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#6e6d6b",
+    "selectedColor": "#0080ff",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/application/index",
+        "iconPath": "images/nav/order-off.png",
+        "selectedIconPath": "images/nav/order-on.png",
+        "text": "报障申请"
+      },
+      {
+        "pagePath": "pages/multiunit/index",
+        "iconPath": "images/nav/multiunit-off.png",
+        "selectedIconPath": "images/nav/multiunit-on.png",
+        "text": "更多功能"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "iconPath": "images/nav/my-off.png",
+        "selectedIconPath": "images/nav/my-on.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,6 @@
+<!--index.wxml-->
+
+  <view class='developing'>
+  <image src='/images/about.jpg'></image>
+  </view>
+

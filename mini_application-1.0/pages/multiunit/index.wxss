@@ -1,0 +1,8 @@
+/**index.wxss**/
+.developing{
+ text-align: right;
+}
+
+.dev-text{
+ text-align: center;
+}

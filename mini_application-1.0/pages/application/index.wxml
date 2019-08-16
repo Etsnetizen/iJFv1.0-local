@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<!--1px = 750/320 = 2.34rpx;-->
+
+<view>
+  <image src='/images/orderindex.jpg' class='demo-img'></image>
+</view>
+<view wx:if="{{isConnect!=false}}">
+    <button class='btn1' open-type='openSetting' bindtap='toStuReportPage' data-id='0'>
+        <view>{{attribute[0]}}</view>
+     </button>
+</view>
+<view wx:if="{{isConnect!=false}}">
+  <navigator url="/pages/application/tea" hover-class="navigator-hover">
+    <button class='btn1' open-type='openSetting' bindtap='toTeaReportPage' data-id="1">
+        <view>{{attribute[1]}}</view>
+     </button>
+  </navigator>
+</view>
+
+<view wx:if="{{isConnect==false}}">
+        <view class='main'>不能连接服务器</view>
+        <view class='main'>可能是访问人数较多或其他原因</view>
+        <view class='main'>请退出重试</view>
+</view>
+
+<!--<view class="container">  
+   <view hidden="{{loadingMoreHidden ? true : false}}"class="no-more-goods">哥也是有底线的
+   </view>
+</view>-->

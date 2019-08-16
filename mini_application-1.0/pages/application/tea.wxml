@@ -1,0 +1,40 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+  
+<view class='container'>
+  <view class="section">
+    <view class="section__title">教师姓名：</view>
+     <view class='input inputbox'>
+    <input name="name" placeholder="请输入真实姓名" />
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section__title">联系电话：</view>
+    <view class='input inputbox'>
+    <input name="phone" placeholder="可以联系到您的号码" />
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section__title">具体地址：</view>
+    <view class='input inputbox'>
+    <input name="address" placeholder="请填写地址" />
+    </view>
+  </view>
+  <view class="section">
+    <view class="section__title">上传图片（可以不上传）</view>
+  </view>
+   <button bindtap="upload"> 上传图片 </button>
+  <view class="section">
+    <view class="section__title">故障的详细描述：</view>
+    <view class='input'>
+    <textarea name="discribe" class='textarea' placeholder="请认真填写" />
+    </view>
+  </view>
+  </view>
+
+  <view class="btn-area">
+    <button form-type="submit" class='submitbtn' data-code='{{random_code}}'>提交</button>
+    <button form-type="reset" class='submitbtn'>重置</button>
+  </view>
+</form>

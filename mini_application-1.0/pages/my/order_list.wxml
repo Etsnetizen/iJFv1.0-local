@@ -1,0 +1,33 @@
+<view class="container">
+    <view class="status-box">
+        <view bindtap="statusTap" class="status-label {{index == currentType ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="{{index}}" data-index="{{index}}">
+            {{item}}
+            <view class="{{tabClass[index]}}"></view>
+        </view>
+    </view>
+    <view class="no-order" hidden="{{report_list ? true : false}}">
+        <image src="/images/no-order.png" class="no-order-img"></image>
+        <view class="text">你还没有提交过报障单</view>
+    </view>
+    <view class="order-list" hidden="{{report_list ? false : true}}">
+        <view class="a-order" wx:for="{{report_list}}" wx:key="{{index}}" wx:for-item="item" >
+            <view class="order-date">
+                <view class="date-box">报障时间：{{item.created_time}}</view>
+                <view class="status {{(item.status == '处理完成') ? '':'red'}}">{{item.status}}</view>
+            </view>
+            <view class="goods-info">
+                <view class="goods-des">
+                   <view>地址:{{item.address}} </view>
+                </view>
+            </view>
+            <view >
+                <scroll-view class="goods-img-container" scroll-x="true">
+                    <view class="img-box" >
+                        <image src="{{item.pic_url}}" class="goods-img"></image>
+                    </view>
+                </scroll-view>
+            </view>
+        </view>
+
+    </view>
+</view>

@@ -1,0 +1,18 @@
+<view class="container">
+	<view class="userinfo">
+		<image wx:if="{{user_info && user_info.avatar_url}}" class="userinfo-avatar" src="{{ user_info.avatar_url }}" background-size="cover"></image>
+		<text class="userinfo-nickname">{{ user_info.nickname }}</text>
+	</view>
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+  <view class="my-item">
+    <navigator bindtap='toMyReport' hover-class="navigator-hover" >我的报障</navigator>
+  </view>
+  <view class="my-item">
+    <navigator url="/pages/my/about" hover-class="navigator-hover">关于我们</navigator>
+  </view>
+
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+    <view class="version">iJFv1.0</view>
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+
+</view>

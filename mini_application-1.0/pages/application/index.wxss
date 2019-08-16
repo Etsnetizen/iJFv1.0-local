@@ -1,0 +1,41 @@
+/**index.wxss**/
+
+.container {
+  background-color: #F2f2f2;
+  min-height: 100%;
+}
+
+.btn1 {
+  width: 80%;
+  margin-top: 20rpx;
+  background-color: #0080ff;
+  color: white;
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn1::after {
+  border-radius: 98rpx;
+}
+
+.no-more-goods{
+  text-align: center;
+  font-size: 24rpx;
+  padding-bottom:48rpx; 
+  color: #999;
+}
+
+.demo-img {
+    display: block;
+    width: 100%;
+}
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}

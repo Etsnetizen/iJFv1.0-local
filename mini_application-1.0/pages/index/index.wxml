@@ -1,0 +1,30 @@
+<!--start.wxml-->
+<view class="container">
+  <view class="remind-box" wx:if="{{remind}}">
+    <image class="remind-img" src="/images/more/loading.gif"></image>
+  </view>
+  <block wx:else>
+    <!--<image class="title" src="/images/more/title8.png"></image>-->
+    <view class="content">
+      <view class="hd" style="transform:rotateZ({{angle}}deg);">
+        <!--<image class="logo" src="/images/more/logo.png"></image>-->
+        <image class="wave" src="/images/more/wave.png" mode="aspectFill"></image>
+        <image class="wave wave-bg" src="/images/more/wave.png" mode="aspectFill"></image>
+      </view>
+      <view class="bd">
+         <image class="smalltitle" src="/images/more/logojf.png"></image>
+
+
+        <view class="confirm-btn" bindtap='goToIndex' wx:if="{{regFlag==true}}">
+          <text >进入</text><!--bindtap绑定了js中goToIndex的方法,所以点击按钮会实现跳转-->
+        </view>
+
+        <button class="confirm-btn"  open-type="getUserInfo" bindgetuserinfo="login" wx:if="{{regFlag==false}}">授权登陆</button>
+
+
+
+        <!--<text class="copyright">@2019GDPU计算机服务队</text>-->
+      </view>
+    </view>
+  </block>
+</view>
