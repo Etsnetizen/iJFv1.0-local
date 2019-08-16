@@ -1,4 +1,4 @@
-SQLALCHEMY_DATABASE_URI = 'mysql://root:zhao0423@127.0.0.1/jfbz'
+SQLALCHEMY_DATABASE_URI = 'mysql://root:xxxxx@127.0.0.1/jfbz'
 DEBUG = False
 SQLACHEMY_ECHO = False
 SERVER_PORT = 9000
@@ -57,8 +57,8 @@ API_IGNORE_URLS = [
 ]
 UPLOAD = {
     'ext':['jpg','gif','bmp','jpeg','png'],
-    'prefix_path':'/static/upload/',#上传图片存放的磁盘地址
-    'prefix_url':'/static/upload/'#网络地址前缀
+    'prefix_path':'/static/upload/',
+    'prefix_url':'/static/upload/'
 }
 
 
