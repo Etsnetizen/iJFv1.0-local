@@ -1,4 +1,4 @@
-SQLALCHEMY_DATABASE_URI = 'mysql://root:zhao0423@127.0.0.1/jfbz'
+SQLALCHEMY_DATABASE_URI = 'mysql://root:xxxx@127.0.0.1/jfbz'
 DEBUG = False
 SQLACHEMY_ECHO = False
 SERVER_PORT = 9000
