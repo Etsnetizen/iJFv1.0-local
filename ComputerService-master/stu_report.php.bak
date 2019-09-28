@@ -1,0 +1,44 @@
+<?php
+	$name = $_POST['stu_name']; 
+	$stunumber = $_POST['stu_num'];
+	$class = $_POST['stu_class'];
+	$phone = $_POST['stu_tel'];
+	$dorm = $_POST['stu_adr'];
+	$discribe = $_POST['stu_desc'];																										
+//表单验证
+   if (empty($_POST["stu_name"])) {
+   echo "<script>alert('提交失败,姓名是必须的！');window.location.href='report.html'</script>";
+   return false;
+  } 
+  if (empty($_POST["stu_adr"])) {
+   echo "<script>alert('提交失败,地址是必须的！');window.location.href='report.html'</script>";
+    return false;
+  } 
+  if (empty($_POST["stu_tel"])) {
+   echo "<script>alert('提交失败,联系方式是必须的！');window.location.href='report.html'</script>";
+    return false;
+  } 
+  if (empty($_POST["stu_desc"])) {
+   echo "<script>alert('提交失败,简要描述是必须的！');window.location.href='report.html'</script>";
+    return false;
+  } 
+
+
+$con = mysqli_connect("127.0.0.1","root",""); //建立连接
+if(!$con)
+{
+	die('建立连接失败:' . mysqli_connect_error());
+}
+else
+{  
+	mysqli_query($con,'set names "utf8"'); 
+     mysqli_select_db($con,'biaodan');  //选择需使用的数据库
+     $insert=mysqli_query($con,"INSERT INTO student (name,schoolnum,class,phone,adress,message,state) VALUES ('".$name."','".$stunumber."','".$class."','".$phone."','".$dorm."','".$discribe."','undone')");      //使用mysql_query执行SQL语句
+	 if(!$insert){
+   echo "<script>alert('提交失败');window.location.href='report.html'</script>";
+ }else{
+   echo "<script>alert('提交成功！');window.location.href='index.html'</script>";
+ }
+}
+mysqli_close($con);           //关闭数据库连接
+?>

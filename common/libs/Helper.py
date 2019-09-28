@@ -1,6 +1,6 @@
 from flask import render_template,g
 import datetime
-
+from common.models.report.Report import Report
 def ops_render (template,context = {}):#context初始化为字典，不一定要传值
     if "current_user" in g:
         context['current_user'] = g.current_user
@@ -54,3 +54,15 @@ def iPagination( params ):
     ret['total'] = total
     ret['range'] = range( ret['from'],ret['end'] + 1 )
     return ret
+
+def Search(req):
+    resp = {}
+    mobile = req['search_mobile'] if 'search_mobile' in req else 0
+    if int(mobile) == -1:
+        return None
+    query = Report.query
+    report_info = query.filter_by(mobile=mobile).order_by(Report.created_time.desc()).first()
+    if not report_info:
+        return None
+    resp['search_info'] = report_info
+    return resp

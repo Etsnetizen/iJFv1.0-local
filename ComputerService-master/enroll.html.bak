@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>广药计服</title>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="image/logo.ico">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(function()
+		{
+			$(".btn-mybt").click(function()
+			{
+				if ($("#name").val() == "")
+				{
+					alert("请输入真实姓名");
+					$("#name").focus();
+					return false;
+				}
+				else if ($(":radio:checked").length == 0)
+				{
+					alert("请选择性别");
+					return false;
+				}
+				else if ($("#college").val() == "")
+				{
+					alert("请输入所在学院");
+					$("#college").focus();
+					return false;
+				}
+				else if ($("#class").val() == "")
+				{
+					alert("请输入所在班级");
+					$("#class").focus();
+					return false;
+				}
+				else if ($("#tel").val() == "")
+				{
+					alert("请输入手机号");
+					$("#tel").focus();
+					return false;
+				}
+				else if ($("#add").val() == "")
+				{
+					alert("请输入生活区地址");
+					$("#add").focus();
+					return false;
+				}
+				else if ($("#self").val() == "")
+				{
+					alert("请介绍一下你自己");
+					$("#self").focus();
+					return false;
+				}
+				else if ($("#join").val() == "")
+				{
+					alert("请谈一谈你的期望");
+					$("#join").focus();
+					return false;
+				}
+				else
+					return true;
+			});
+		});
+	</script>
+</head>
+<body style="padding-top: 100px">
+	<!-- 导航栏 -->
+	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href=""><img src="image/logo2.png" alt="logo" width="250px" height="75px"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent1">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link" href="index.html">首页<span class="sr-only">(current)</span></a></li>
+				<li class="nav-item"><a class="nav-link" href="report.html">报障</a></li>
+				<li class="nav-item"><a class="nav-link" href="about.html">关于计服</a></li>
+				<li class="nav-item"><a class="nav-link" href="login.html">工作人员入口</a></li>
+				<li class="nav-item"><a class="nav-link" href="enroll.html" style="color: #26A6FF">招新报名</a></li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0" action="research.php" method="post">
+				<input class="form-control mr-sm-2" name="stu_tel" type="search" placeholder="输入电话号码查询进度" aria-label="Search">
+				<button class="btn btn-mybt my-2 my-sm-0" type="submit">查询</button>
+			</form>
+		</div>
+	</nav>
+
+	<!-- 表单 -->
+	<div class="container" style="width: 500px">
+		<div style="padding-top: 20px;padding-bottom: 20px;margin-left: 34%">
+			<span class="badge badge-primary badge-pill" style="line-height: 35px;font-size: 30px;background: #26A6FF">&nbsp;报名表&nbsp;</span>
+		</div>
+		<form action="enroll.php" method="post" onsubmit="return validate_form(this)">
+			<div class="form-group" style="float: left;width: 48%;">
+				<label for="name">学生姓名:</label>
+				<input type="text" class="form-control" id="name" name="name" placeholder="请输入真实姓名">
+			</div>
+			<div style="float: right;width: 48%;margin-bottom: 50px;">
+				<label style="width: 100%;margin-bottom: 15px;">性别:</label>
+				<label class="radio-inline" style="margin-right: 25px"><input type="radio" name="optradio" value="男">男</label>
+				<label class="radio-inline"><input type="radio" name="optradio" value="女">女</label>
+			</div>
+			<div class="form-group">
+				<label for="college">学院:</label>
+				<input type="text" class="form-control" id="college" name="college" placeholder="请输入所在学院">
+			</div>
+			<div class="form-group">
+				<label for="class">班级:</label>
+				<input type="text" class="form-control" id="class" name="class" placeholder="请输入所在班级">
+			</div>
+			<div class="form-group">
+				<label for="tel">联系电话:</label>
+				<input type="text" class="form-control" id="tel"  name="tel" placeholder="请输入手机号">
+			</div>
+			<div class="form-group">
+				<label for="add">具体地址:</label>
+				<input type="text" class="form-control" id="add"  name="add" placeholder="请输入生活区地址">
+			</div>
+			<div class="form-group">
+				<label for="self">自我介绍或个人简历:</label>
+				<textarea class="form-control" rows="5" id="self" name="self" placeholder="请介绍一下你自己"></textarea>
+			</div>
+			<div class="form-group">
+				<label for="join">加入我们，你有什么期望吗:</label>
+				<textarea class="form-control" rows="5" id="join" name="join" placeholder="请谈一谈你的期望"></textarea>
+			</div>
+			<button type="submit" class="btn btn-mybt" style="width: 100px;margin-left: 39%;margin-top: 10px;margin-bottom: 30px;">提交</button>
+		</form>
+	</div>
+
+
+	<!-- 底部 -->
+	<div class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
+					<dl>
+						<dt>社团</dt>
+						<dd>计服文化</dd>
+						<dd>技术培训</dd>
+						<dd>特色活动</dd>
+					</dl>
+				</div>
+				<div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
+					<dl>
+						<dt>规章制度</dt>
+						<dd>考勤制度</dd>
+						<dd>会议制度</dd>
+						<dd>值班制度</dd>
+					</dl>
+				</div>
+				<div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
+					<dl>
+						<dt>技术支持</dt>
+						<dd>硬件知识</dd>
+						<dd>开发语言</dd>
+						<dd>团队合作</dd>
+					</dl>
+				</div>
+				<div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
+					<dl>
+						<dt>更多</dt>
+						<dd>联系我们</dd>
+						<dd>产权声明</dd>
+						<dd>微博</dd>
+						<dd>微信</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<div class="container" style="padding: 20px; color:white;border-top: solid 1px">© 2014 gdpujf.duapp.com&nbsp;&nbsp;&nbsp;京ICP备13017353号-3&nbsp;&nbsp;&nbsp;京公网安备11010802012357号</div>
+	</div>
+</body>
+</html>

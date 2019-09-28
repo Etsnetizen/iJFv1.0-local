@@ -1,0 +1,16 @@
+<?php
+	$num=$_GET['aim'];
+	$con = mysqli_connect("127.0.0.1","root",""); //建立连接
+	if(!$con)
+	{
+	die('建立连接失败:' . mysqli_connect_error());
+	}
+	else
+	{
+		mysqli_query($con,'set names "utf8"'); 
+		mysqli_select_db($con,'biaodan');  //选择需使用的数据库
+		mysqli_query($con,"UPDATE  student SET state='done' WHERE phone='".$num."'");
+		echo "<script>alert('操作成功！');window.location.href='unfinished.php'</script>";
+	}
+	mysqli_close($con);
+?>

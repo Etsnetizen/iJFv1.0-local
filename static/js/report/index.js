@@ -29,7 +29,7 @@ var report_index_ops = {
         var callback = {
             'ok':function () {
                 $.ajax({
-                    url:common_ops.buildUrl('/ops'),
+                    url:common_ops.buildUrl('/report/ops'),
                     type:'POST',
                     data:{
                         act:act,

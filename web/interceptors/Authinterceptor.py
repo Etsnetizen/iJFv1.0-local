@@ -10,6 +10,10 @@ def before_request():
     ignore_urls = app.config['IGNORE_URLS']
     ignore_check_login_urls = app.config['IGNORE_CHECK_LOGIN_URLS']
     path = request.path
+    app.logger.info(path)
+    if path == '/':
+        return redirect(UrlManager.buildUrl('/index'))
+
     pattern = re.compile("%s"%"|".join( ignore_check_login_urls ))
     if pattern.match( path ):
         return

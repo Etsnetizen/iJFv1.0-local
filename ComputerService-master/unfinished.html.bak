@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>广药计服</title>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="image/">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	</head>
+<body>
+	<!-- 导航栏 -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light"> <a class="navbar-brand" href=""><img src="image/logo2.png" alt="logo" width="250px" height="75px"></a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item"> <a class="nav-link" href="index.html" >首页<span class="sr-only">(current)</span></a></li>
+	      <li class="nav-item"> <a class="nav-link" href="report.html">报障</a></li>
+	      <li class="nav-item"> <a class="nav-link" href="about.html" >关于计服</a></li>
+	      <li class="nav-item "> <a class="nav-link" href="login.html" style="color: #26A6FF">工作人员入口</a></li>
+        </ul>
+	    <form class="form-inline my-2 my-lg-0">
+	      <input class="form-control mr-sm-2" type="search" placeholder="输入学号查询进度" aria-label="Search">
+	      <button class="btn btn-mybt my-2 my-sm-0" type="submit">查询</button>
+        </form>
+      </div>
+</nav>
+<!--登陆窗口-->
+    <div class="container" style="padding-top: 200px;width:500px">
+		<div class="title"><h2>欢迎您！</h2> </div>
+	   <table class="imagetable" align="center">
+		<p align="center"><br>任务完成后请点击对应任务的完成按钮<br>点击<a href="finished.html">已处理的任务</a>查看已完成的任务。</p>
+		<tr>
+			<th>姓名</th><th>学号</th><th>班级</th><th>联系电话</th><th>宿舍号</th><th>问题描述</th><th>操作</th>
+		</tr>	
+	</table>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>广药计服</title>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="image/">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</head>
+<body>
+	<!-- 导航栏 -->
+	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light"> <a class="navbar-brand" href=""><img src="image/logo2.png" alt="logo" width="250px" height="75px"></a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item active"> <a class="nav-link" href="index.html">首页<span class="sr-only">(current)</span></a> </li>
+		  <li class="nav-item"> <a class="nav-link" href="report.html" style="color: #26A6FF">报障</a> </li>
+	      <li class="nav-item"> <a class="nav-link" href="about.html">关于计服</a></li>
+		  <li class="nav-item"> <a class="nav-link" href="login.html">工作人员入口</a></li>
+        </ul>
+	    <form class="form-inline my-2 my-lg-0" action="http://localhost/GDPUjf/research.php" method="post">
+	      <input class="form-control mr-sm-2" type="search" placeholder="输入电话号码查询进度" aria-label="Search">
+	      <button class="btn btn-mybt my-2 my-sm-0" type="submit">查询</button>
+        </form>
+      </div>
+</nav>
+	<!-- 切换表单 -->
+	<div class="container" style="padding-top:100px;padding-bottom: 30px;">
+		<!-- 选项卡 -->
+		<ul class="nav nav-tabs" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link active" data-toggle="tab" href="#menu1" style="font-size: 25px;font-weight: bold; color: #26A6FF">生活区报障<span style="font-size: 19px;font-weight: normal;color: #B3B3B3">&nbsp; Living area </span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#menu2" style="font-size: 25px;font-weight: bold;color: #26A6FF ">教学区报障<span style="font-size: 19px;font-weight: normal;color: #B3B3B3">&nbsp; Teaching area </span></a>
+			</li>
+		</ul>
+		<!-- 表单 -->
+		<div class="tab-content">
+			<div id="menu1" class="container tab-pane active">
+				<div style="padding-top: 20px;padding-bottom: 20px;">
+					<span class="badge badge-primary badge-pill" style="line-height: 35px;font-size: 30px;background:#26A6FF ">&nbsp;生活区报障&nbsp;</span>
+				</div>
+				<form action="http://localhost/test/GDPUjf/stu_report.php" method="post">
+				    
+					<div class="form-group">
+						<label for="name">学生姓名:</label>
+						<input type="text" class="form-control" id="stu_name" name="stu_name" placeholder="请输入真实姓名，否则不受理" required>
+					</div>
+					<div class="form-group">
+				    	<label for="stu_num">学号</label>
+				    	<input type="text" class="form-control" id="stu_num" name="stu_num" placeholder="请输入学号" required>
+				    </div>
+					<div class="form-group">
+						<label for="stu_class">班级</label>
+						<input type="text" class="form-control" id="stu_class" name="stu_class" placeholder="请输入班级" >
+					</div>
+					<div class="form-group">
+						<label for="tel">联系电话:</label>
+						<input type="text" class="form-control" id="tel" name="stu_tel" placeholder="长号或短号，方便联系" required>
+					</div>
+					<div class="form-group">
+						<label for="adr">具体地址:</label>
+						<input type="text" class="form-control" id="adr" name="stu_adr" placeholder="请输入生活区地址" required>
+					</div>
+					<div class="form-group">
+						<label for="desc">故障的详细描述:</label>
+						<textarea class="form-control" rows="5" id="desc"  name="stu_desc" placeholder="便于维修您的电脑，请认真填写" required></textarea>
+					</div>
+					<button type="submit" class="btn btn-mybt" style="width: 100px;margin-top: 10px;">提交</button>
+				</form>
+			</div>
+			<div id="menu2" class="container tab-pane fade">
+				<div style="padding-top: 20px;padding-bottom: 20px;">
+					<span class="badge badge-primary badge-pill" style="line-height: 35px;font-size: 30px;background: #26A6FF">&nbsp;教学区报障&nbsp;</span>
+				</div>
+				<form action="" method="post">
+					<div class="form-group">
+						<label for="name">教师姓名:</label>
+						<input type="text" class="form-control" id="name" name="tea_name" placeholder="请输入真实姓名，否则不受理">
+					</div>
+					<div class="form-group">
+						<label for="tel">联系电话:</label>
+						<input type="text" class="form-control" id="tea_tel" name="tea_tel" placeholder="长号或短号，方便联系">
+					</div>
+					<div class="form-group">
+						<label for="adr">具体地址:</label>
+						<input type="text" class="form-control" id="tea_adr" name="tea_adr" placeholder="请输入教学区地址">
+					</div>
+					<div class="form-group">
+						<label for="desc">故障的详细描述:</label>
+						<textarea class="form-control" rows="5" id="tea_desc" name="tea_desc" placeholder="便于维修您的电脑，请认真填写"></textarea>
+					</div>
+					<button type="submit" class="btn btn-mybt" style="width: 100px;margin-top: 10px;">提交</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- 底部 -->
+	<div class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
+					<dl>
+						<dt>社团</dt>
+						<dd>计服文化</dd>
+						<dd>技术培训</dd>
+						<dd>特色活动</dd>
+					</dl>
+				</div>
+				<div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
+					<dl>
+						<dt>规章制度</dt>
+						<dd>考勤制度</dd>
+						<dd>会议制度</dd>
+						<dd>值班制度</dd>
+					</dl>
+				</div>
+				<div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
+					<dl>
+						<dt>技术支持</dt>
+						<dd>硬件知识</dd>
+						<dd>开发语言</dd>
+						<dd>团队合作</dd>
+					</dl>
+				</div>
+				<div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
+					<dl>
+						<dt>更多</dt>
+						<dd>联系我们</dd>
+						<dd>产权声明</dd>
+						<dd>微博</dd>
+						<dd>微信</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<div class="container">© 2014 gdpujf.duapp.com&nbsp;&nbsp;&nbsp;京ICP备13017353号-3&nbsp;&nbsp;&nbsp;京公网安备11010802012357号</div>
+	</div>
+</body>
+</html>

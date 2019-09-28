@@ -34,7 +34,7 @@ var user_login_ops = {
                     var callback = null;
                     if(res.code == 200){
                         callback = function () {
-                            window.location.href = common_ops.buildUrl('/');
+                            window.location.href = common_ops.buildUrl('/report');
                         }
                     }
                     common_ops.alert(res.msg,callback)
@@ -45,4 +45,4 @@ var user_login_ops = {
 };
 $(document).ready( function(){
     user_login_ops.init();
-} );
+});

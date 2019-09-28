@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>广药计服</title>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="image/logo.ico">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$(".img1").click(function()
+			{
+				location = "about.html";
+			});
+			$(".img2").click(function()
+			{
+				location = "report.html";
+			});
+			$(".img3").click(function()
+			{
+				location = "enroll.html";
+			});
+			$(".img4").click(function()
+			{
+				location = "shoppage.html";
+			});
+		});
+        function warning()
+        {
+         alert("正在努力开发中o(￣┰￣*)ゞ，敬请期待！");
+         };
+     </script>
+</head>
+{% block js %}
+	<script type="text/javascript" src="{{buildStaticUrl('/index_js/bootstrap.min.js')}}"></script>
+	<script type="text/javascript" src="{{buildStaticUrl('/index_js/jquery-3.3.1.min.js')}}"></script>
+	<script src="{{buildStaticUrl('/index_js/popper.min.js')}}"></script>
+{% endblock %}

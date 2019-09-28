@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>广药计服</title>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="image/">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/introduction.css">
+    <link rel="icon" type="image/gif" href="image/logo.ico" >
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script>
+        function change(x){
+            var ob = document.getElementById("exchanger");
+//            alert("lalalalala");
+            switch(x){
+                case 1:  ob.style.height = "2500px";break;
+                case 2:  ob.style.height = "2300px";break;
+                case 3:  ob.style.height = "2300px";break;
+                case 4:  ob.style.height = "3800px";break;
+                case 5:  ob.style.height = "800px";break;
+                case 6:  ob.style.height = "800px";break;
+                case 7:  ob.style.height = "9300px";break;
+            }
+        }
+    </script>
+</head>
+<body>
+	<!-- 导航栏 -->
+	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href=""><img src="image/logo2.png" alt="logo" width="250px" height="75px"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent1">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link" href="index.html" >首页<span class="sr-only">(current)</span></a></li>
+				<li class="nav-item"><a class="nav-link" href="report.html">报障</a></li>
+				<li class="nav-item"><a class="nav-link" href="about.html" style="color: #26A6FF">关于计服</a></li>
+                <li class="nav-item"><a class="nav-link" href="help.html" >帮助</a></li>
+				<li class="nav-item"><a class="nav-link" href="login.html">工作人员入口</a></li>
+				<li class="nav-item"><a class="nav-link" href="enroll.html">招新报名</a></li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0 col-lg-4 " action="research.php" method="post">
+				<input class="form-control mr-sm-2  col-lg-8" type="search" name="stu_tel" placeholder="输入电话号码查询生活区进度" aria-label="Search">
+				<button class="btn btn-mybt my-2 my-sm-0" type="submit">查询</button>
+			</form>
+		</div>
+	</nav>
+
+	<!-- 列表组 -->
+	<div id="exchanger" style="height:2500px">
+	  <div class="container" >
+	    <!-- 选项卡 -->
+	    <div class="title" style="padding-top: 15px;padding-bottom: 15px;">
+	      <a href="index.html">首页</a> &gt; <a href="about.html">关于我们</a> &gt; <a href="about.html">社团简介</a>
+	      </div>
+	    <div class="list-group" style="float: left;width: 20%;padding-top: 75px">
+	      <p class="list-group-item list-group-item-light" style="background: #F4F4F4;font-size: 21px;font-weight: bold;">关于我们<span style="font-size: 16px;font-weight: normal;color: #B3B3B3">&nbsp;&nbsp;</span></p>
+	      <a data-toggle="tab" href="#menu1" class="list-group-item list-group-item-light active" onClick="change(1)">社团简介</a>
+	      <a data-toggle="tab" href="#menu2" class="list-group-item list-group-item-light" onClick="change(2)">技术部简介</a>
+	      <a data-toggle="tab" href="#menu3" class="list-group-item list-group-item-light" onClick="change(3)">网络部简介</a>
+	      <a data-toggle="tab" href="#menu4" class="list-group-item list-group-item-light" onClick="change(4)">策划部简介</a>
+ <!--     <a data-toggle="tab" href="#menu5" class="list-group-item list-group-item-light" onClick="change(6)">开网教程</a>-->
+ <!--  	   <a data-toggle="tab" href="#menu6" class="list-group-item list-group-item-light" onClick="change(7)">电脑常见故障</a>-->
+	      </div>
+		<!-- 内容 -->
+	    <div class="tab-content" style="float: right;width: 78%;padding-top: 75px">
+	      <div id="menu1" class="container tab-pane active" >
+	        <div style="border-bottom: 1px solid #C0C0C0;height: 50px;">
+	          <p style="font-size: 30px;font-weight: bold;color: #1285EF;">社团简介</p>
+	          </div>
+	        <div >
+	          <p align="center" ><img src="image/chart2.jpg" width="100%"></p> 
+	          <img src="计服介绍文档/社团介绍/1.jpg" alt="" width="100%">
+	          <img src="计服介绍文档/社团介绍/2.jpg" alt="" width="100%">
+	          <p style="line-height: 30px"></p>
+	          </div>
+	        </div>
+	      <div id="menu2" class="container tab-pane fade">
+	        <div style="border-bottom: 1px solid #C0C0C0;height: 50px;">
+	          <p style="font-size: 30px;font-weight: bold;color: #1285EF;">技术部简介</p>
+	          </div>
+	        <div>
+	          <img src="计服介绍文档/技术部/1.jpg" alt="" width="100%">
+	          <img src="计服介绍文档/技术部/2.jpg" alt="" width="100%">
+	          </div>
+	        </div>
+	      <div id="menu3" class="container tab-pane fade">
+	            <div style="border-bottom: 1px solid #C0C0C0;height: 50px;">
+	                  <p style="font-size: 30px;font-weight: bold;color: #1285EF;">网络部简介</p>
+	              </div>
+	            <div>
+                      <img src="计服介绍文档/网络部/n1.jpg" alt="" width="100%">
+                      <img src="计服介绍文档/网络部/n2.jpg" alt="" width="100%">
+                      <img src="计服介绍文档/网络部/n3.jpg" alt="" width="100%">
+                </div>
+	        </div>
+	      <div id="menu4" class="container tab-pane fade">
+                <div style="border-bottom: 1px solid #C0C0C0;height: 50px;">
+                  <p style="font-size: 30px;font-weight: bold;color: #1285EF;">策划部简介</p>
+                </div>
+                <img src="计服介绍文档/策划部/1.jpg" alt="" width="100%">
+                <img src="计服介绍文档/策划部/2.jpg" alt="" width="100%">
+                <img src="计服介绍文档/策划部/3.jpg" alt="" width="100%">
+               
+                   
+
+	       </div>
+	      
+	      <div id="menu5" class="container tab-pane fade">
+	        <div style="border-bottom: 1px solid #C0C0C0;height: 50px;">
+	          <p style="font-size: 30px;font-weight: bold;color: #1285EF;">开网教程</p>
+	          </div>
+	        <div>
+	          <p></p>
+	          </div>
+	        </div>
+	      <div id="menu6" class="container tab-pane fade">
+	        <div style="border-bottom: 1px solid #C0C0C0;height: 50px;">
+	          <p style="font-size: 30px;font-weight: bold;color: #1285EF;">电脑常见故障</p>
+                <img src="计服介绍文档/常见问题/1.jpg" alt="" width="100%"> 
+                <img src="计服介绍文档/常见问题/2.jpg" alt="" width="100%"> 
+                <img src="计服介绍文档/常见问题/3.jpg" alt="" width="100%"> 
+                <img src="计服介绍文档/常见问题/4.jpg" alt="" width="100%"> 
+                <img src="计服介绍文档/常见问题/5.jpg" alt="" width="100%"> 
+                <img src="计服介绍文档/常见问题/6.jpg" alt="" width="100%"> 
+                <img src="计服介绍文档/常见问题/7.jpg" alt="" width="100%"> 
+                <img src="计服介绍文档/常见问题/8.jpg" alt="" width="100%"> 
+	          </div>
+	        <div>
+	          <p></p>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+</div>
+
+	<!-- 底部 -->
+	<div class="footer">
+		<div class="container">
+			<div class="row" style="margin: 0 auto;color: white;width:50%">					
+				<div class="contactUs" style="margin: 0 auto">
+				<h3>联系我们</h3>
+				<p style="width: 75%;margin: 0 auto 30px 30px">广东药科大学c栋一楼计服办公室</p>				
+				<img src="image/qr-code.jpg" width="150px" height="150" style="margin-bottom: 30px">
+				</div>		
+		    </div>
+		   <div class="container" style="padding: 20px; color:white;border-top: solid 1px">
+			 Copyright © 2019广药计服 All Rights Reserved. 京ICP证000007-146
+		   </div>
+	    </div>
+   </div>		
+</body>
+</html>

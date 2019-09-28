@@ -8,8 +8,8 @@ from common.models.User import User
 from common.libs.Helper import iPagination
 from common.libs.report.ReportService import ReportService
 from common.models.log.OperationalRecordsLog import OperationalRecordsLog
-route_index = Blueprint('index_page',__name__)
-@route_index.route('/')
+route_report = Blueprint('report_page',__name__)
+@route_report.route('/')
 def index():
     resp_data = {}
     req = request.values
@@ -19,11 +19,11 @@ def index():
     query = Report.query
 
     if 'mix_kw' in req:
-        rule = or_( Report.name.ilike( "{0}".format( req['mix_kw']))
-                    ,Report.mobile.ilike( "{0}".format(req['mix_kw'])))
+        rule = or_( Report.name.ilike( "%{0}".format( req['mix_kw']))
+                    ,Report.mobile.ilike( "%{0}".format(req['mix_kw'])))
         query = query.filter( rule )
     if 'status' in req and int(req['status']) in [1,0,-9,-8,-7]:
-        query = query.filter(Report.status == req['status'])
+        query = query.filter(Report.status == int(req['status']))
 
 
 
@@ -48,7 +48,7 @@ def index():
 
 
 
-@route_index.route('/ops',methods = ['POST'])
+@route_report.route('/ops',methods = ['POST'])
 def report_ops():
     resp = {'code':200,'msg':"操作成功",'data':{} }
     req = request.values
@@ -97,7 +97,7 @@ def report_ops():
 
 
 
-@route_index.route('/info')
+@route_report.route('/info')
 def info():
     resp_data = {}
     req = request.values
@@ -134,7 +134,7 @@ def info():
     return ops_render('/report/info.html',resp_data)
 
 
-@route_index.route('/set',methods = ['POST','GET'])
+@route_report.route('/set',methods = ['POST','GET'])
 def set():
     if request.method == 'GET':
         resp_data = {}

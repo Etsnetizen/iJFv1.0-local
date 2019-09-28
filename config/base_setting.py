@@ -1,4 +1,4 @@
-SQLALCHEMY_DATABASE_URI = 'mysql://root:zhao0423@127.0.0.1/jfbz'
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:zhao0423@127.0.0.1/jfbz'
 DEBUG = False
 SQLACHEMY_ECHO = False
 SERVER_PORT = 9000
@@ -11,6 +11,7 @@ AUTH_COOKIE_NAME = "jf_member"
 IGNORE_URLS = [
     "^/user/login",
     #"^/api"
+    "^/index"
 
 ]
 
@@ -30,7 +31,7 @@ KEY_LENGTH = 16
 
 
 APP = {
-    'domain':'http://192.168.199.224:9000'
+    'domain':'http://127.0.0.1:9000'
 }
 
 #报障的各种状态
@@ -48,8 +49,8 @@ ATTRIBUTE_MAPPING = {
 }
 
 MINA_APP = {
-    'appid':'xxxx',
-    'appkey':'xxxx'
+    'appid':'wxb19cb690caafbecc',
+    'appkey':'5e1f0457090ffbdf05c4cbc0486652b2'
 }
 
 API_IGNORE_URLS = [

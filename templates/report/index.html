@@ -75,11 +75,11 @@
                             <td>{{ item.status_desc }}</td>
                             <td>{{ item.created_time }}</td>
                             <td>
-                    <a href="{{ buildUrl('/info') }}?id={{item.id}}">
+                    <a href="{{ buildUrl('/report/info') }}?id={{item.id}}">
                         <i class="fa fa-eye fa-lg"></i>
                     </a>
 
-                    <a class="m-l" href="{{ buildUrl('/set') }}?id={{item.id}}">
+                    <a class="m-l" href="{{ buildUrl('/report/set') }}?id={{item.id}}">
                         <i class="fa fa-book fa-lg"></i><!--添加备注-->
                     </a>
 

@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>广药计服</title>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="{{ buildStaticUrl('/images/index/logo.ico')}}">
+	<link rel="stylesheet" type="text/css" href="{{ buildStaticUrl('/index/index_css/index.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ buildStaticUrl('/index/index_css/bootstrap.min.css') }}">
+    <link rel="icon" type="image/gif" href="{{ buildStaticUrl('/images/index/logo.ico') }}" >
+	<script type="text/javascript" src="{{ buildStaticUrl('/index/index_js/jquery-3.3.1.min.js') }}"></script>
+	<script type="text/javascript" src="{{ buildStaticUrl('/index/index_js/bootstrap.min.js') }}"></script>
+</head>
+<body>
+	<!-- 导航栏 -->
+	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href=""><img src="{{ buildStaticUrl('/images/index/logo2.png') }}" alt="logo" width="250px" height="75px"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent1">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link" href="{{buildUrl('/index')}}" style="color: #26A6FF">首页<span class="sr-only">(current)</span></a></li>
+				<li class="nav-item"><a class="nav-link" href="{{buildUrl('/index/report')}}">报障</a></li>
+				<li class="nav-item"><a class="nav-link" href="{{buildUrl('/index/about')}}">关于计服</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{buildUrl('/index/help')}}">帮助</a></li>
+				<li class="nav-item"><a class="nav-link" href="{{buildUrl('/user/login')}}">工作人员入口</a></li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0 col-lg-4 wrap_index_search" method="post">
+				<input class="form-control mr-sm-2  col-lg-8" type="search" name="search_mobile" placeholder="输入电话号码查询进度" aria-label="Search">
+				<button class="btn btn-mybt my-2 my-sm-0 index_search" type="submit">查询</button>
+			</form>
+		</div>
+	</nav>
+
+	<!-- 登陆窗口 -->
+    <div class="container" style="padding-top: 200px;width:500px">
+		<div class="title"><h2>你已经成功提交申请</h2>
+							<h2>我们的工作人员将会很快联系你</h2>
+							<h2>你也可以到GDPU小程序查看报障进度</h2>
+		</div>
+	</div>
+</body>
+</html>

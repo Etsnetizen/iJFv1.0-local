@@ -42,7 +42,7 @@ def SubmitReport():
         resp['code'] = -1
         resp['msg'] = '请输入符合规范的姓名'
         return jsonify(resp)
-    if student_id is None or student_id  < 10:
+    if student_id is None or int(student_id)  < 10:
         resp['code'] = -1
         resp['msg'] = '请输入符合规范的学号'
         return jsonify(resp)
