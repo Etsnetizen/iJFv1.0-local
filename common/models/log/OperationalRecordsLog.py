@@ -4,12 +4,12 @@ from sqlalchemy.schema import FetchedValue
 from application import db
 
 
-
 class OperationalRecordsLog(db.Model):
     __tablename__ = 'operational_records_log'
 
     id = db.Column(db.Integer, primary_key=True)
     report_id = db.Column(db.Integer, nullable=False)
+    nickname = db.Column(db.String(255), nullable=False, server_default=db.FetchedValue())
     uid = db.Column(db.BigInteger, nullable=False, index=True, server_default=db.FetchedValue())
     operation = db.Column(db.String(255), nullable=False, server_default=db.FetchedValue())
     change_remark = db.Column(db.String(255))

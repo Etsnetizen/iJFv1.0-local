@@ -8,7 +8,7 @@ var submit_report = {
     },
     eventBind:function () {
         $(".wrap_report_stu_submit .stu_submit").click(function () {
-            alert('111');
+            //alert('111');
             var btn_target = $(this);
             if (btn_target.hasClass("disabled")){
                 alert("正在提交中");
@@ -38,7 +38,7 @@ var submit_report = {
                     success:function ( res ) {
                         btn_target.removeClass('disabled');
                         if( res.code == 200 ){
-                            window.location.href = common_ops.buildUrl('/report/finish')
+                            window.location.href = common_ops.buildUrl('/index/report/finish')
                         }
                         alert(res.msg);
                     }
@@ -88,7 +88,7 @@ var submit_report = {
                     success:function ( res ) {
                         btn_target.removeClass('disabled');
                         if( res.code == 200 ){
-                            window.location.href = common_ops.buildUrl('/report/finish')
+                            window.location.href = common_ops.buildUrl('index/report/finish')
                         }
                         alert(res.msg);
                     }

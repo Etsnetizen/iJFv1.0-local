@@ -40,7 +40,7 @@ STATUS_MAPPING = {
     '0':'无法处理',
     '-9':'延期处理',
     '-8':'待处理',
-    '-7':'处理中'
+    '-7':'处理中',
 }
 
 ATTRIBUTE_MAPPING = {
@@ -62,4 +62,6 @@ UPLOAD = {
     'prefix_url':'/static/upload/'
 }
 
+#每天限制的报障数量
+MAXSIZE_OF_REPORT = 5
 

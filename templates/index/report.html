@@ -54,7 +54,7 @@
 				<div style="padding-top: 20px;padding-bottom: 20px;margin-left: 26%">
 					<span class="badge badge-primary badge-pill" style="line-height: 35px;font-size: 30px;background: #26A6FF">&nbsp;生活区报障表&nbsp;</span>
 				</div>
-
+				{% if notice ==None %}
 					<div class="form-group">
 						<label for="name">学生姓名:</label>
 						<input type="text" class="form-control" id="stu_name" name="stu_name" placeholder="请输入真实姓名，否则不受理">
@@ -84,7 +84,9 @@
     					<input type="hidden" name="stu_attribute" value="0">
 					</div>
 					<button type="submit" class="btn btn-mybt stu_submit" style="width: 100px;margin-top: 10px;margin-left: 40%">提交</button>
-
+				{% else %}
+					<h2>{{notice}}</h2>
+				{% endif %}
 			</div>
 			<div id="menu2" class="container tab-pane fade wrap_report_tea_submit">
 				<div style="padding-top: 20px;padding-bottom: 20px;margin-left: 26%">

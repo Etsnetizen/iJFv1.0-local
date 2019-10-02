@@ -1,12 +1,15 @@
 from flask import render_template,g
 import datetime
 from common.models.report.Report import Report
+import time
+from application import app
 def ops_render (template,context = {}):#context初始化为字典，不一定要传值
     if "current_user" in g:
         context['current_user'] = g.current_user
     return render_template(template,**context)
 
-def getCurrentDate( format = "%Y-%m-%d %H:%H:%S"):
+def getCurrentDate( format = "%Y-%m-%d %H:%M:%S"):
+    app.logger.info(datetime.datetime.now().strftime( "%Y-%m-%d %H:%M:%S" ))
     return datetime.datetime.now().strftime( format )
 
 def iPagination( params ):
@@ -58,6 +61,9 @@ def iPagination( params ):
 def Search(req):
     resp = {}
     mobile = req['search_mobile'] if 'search_mobile' in req else 0
+    app.logger.info(mobile)
+    if mobile == '' :
+        return None
     if int(mobile) == -1:
         return None
     query = Report.query
@@ -66,3 +72,30 @@ def Search(req):
         return None
     resp['search_info'] = report_info
     return resp
+
+
+def Check_If_Exceed_Maxsize():
+    #检查是否超出最大限制报障数量
+    present_time = getCurrentDate()
+    origin_day_time = getCurrentDate("%Y-%m-%d") + " 00:00:00"
+    app.logger.info(present_time)
+    app.logger.info(origin_day_time)
+    report_today_count = Report.query.filter(origin_day_time < Report.created_time
+                                             ,Report.created_time < present_time).filter_by(attribute = 0).count()
+
+    app.logger.info(report_today_count)
+
+
+    report_today_list = Report.query.filter(origin_day_time < Report.created_time
+                                             ,Report.created_time < present_time).all()
+    app.logger.info(report_today_list)
+
+
+    if report_today_count + 1 > app.config['MAXSIZE_OF_REPORT'] :
+        return False
+    return True
+
+
+
+
+

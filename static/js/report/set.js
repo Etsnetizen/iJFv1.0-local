@@ -18,7 +18,7 @@ var report_set_ops = {
                 id:$(".wrap_report_set input[name=id]").val()
             };
             $.ajax({
-                url:common_ops.buildUrl('/set'),
+                url:common_ops.buildUrl('/report/set'),
                 type:'POST',
                 data:data,
                 dataType:'json',
@@ -27,7 +27,7 @@ var report_set_ops = {
                     var callback = null;
                     if( res.code == 200 ){
                         callback = function () {
-                            window.location.href = common_ops.buildUrl('/')
+                            window.location.href = common_ops.buildUrl('/report')
                         }
                     }
                     common_ops.alert(res.msg,callback)

@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="row">
-            {% if info.random_code != 0 %}
+            {% if info.random_code != '0' %}
             <div class="col-lg-2 text-center">
                 <img src="{{ buildImageUrl(info.main_image) }}" style="width: 100%;height: 100%;">
             </div>
@@ -51,7 +51,7 @@
                                     <thead>
                                         <tr>
                                             <th>操作</th>
-                                            <th>处理人id</th>
+                                            <th>处理人姓名</th>
                                             <th>时间</th>
                                         </tr>
                                     </thead>
@@ -65,7 +65,7 @@
                                                     {% else %}
                                                     <td>{{ item.operation }}:{{ item.change_remark }}</td>
                                                     {% endif %}
-                                                    <td>{{ item.uid }}</td>
+                                                    <td>{{ item.nickname }}</td>
                                                     <td>{{ item.created_time }}</td>
                                                 </tr>
                                         {% endfor %}

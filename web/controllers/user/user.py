@@ -6,6 +6,7 @@ import json
 from application import app,db
 from common.libs.Helper import ops_render
 from flask import g
+from common.libs.UrlManager import UrlManager
 
 route_user = Blueprint('user_page',__name__,template_folder='templates')
 
@@ -46,5 +47,13 @@ def login():
 
     response = make_response(json.dumps( resp ))
     response.set_cookie(app.config['AUTH_COOKIE_NAME'],"%s#%s"%(UserService.geneAuthCode( user_info ),user_info.uid))
+    return response
+
+
+
+@route_user.route('/logout')
+def logout():
+    response = make_response(redirect(UrlManager.buildUrl("/user/login")))
+    response.delete_cookie(app.config['AUTH_COOKIE_NAME'])
     return response
 
