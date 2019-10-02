@@ -1,4 +1,4 @@
-SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:zhao0423@127.0.0.1/jfbz'
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:xxx@127.0.0.1/jfbz'
 DEBUG = False
 SQLACHEMY_ECHO = False
 SERVER_PORT = 9000
@@ -49,8 +49,8 @@ ATTRIBUTE_MAPPING = {
 }
 
 MINA_APP = {
-    'appid':'wxb19cb690caafbecc',
-    'appkey':'5e1f0457090ffbdf05c4cbc0486652b2'
+    'appid':'xxxx',
+    'appkey':'xxxxx'
 }
 
 API_IGNORE_URLS = [
