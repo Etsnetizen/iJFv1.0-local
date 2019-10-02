@@ -4,6 +4,9 @@
 1.为xlsx文件
 2.以某一列作为账号
 3.以某一列作为密码
+例如：
+python Bath_account_creat.py -f 2019通讯录.xlsx -i 0 -u 2 -p 3 -n 5
+意思时在此xls文件中取第0列作为用户名 第2列作为账号 以第3列中第5位开始作为密码 
 """
 import xlrd,random,string
 import sys,os
