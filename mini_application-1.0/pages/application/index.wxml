@@ -4,11 +4,16 @@
 <view>
   <image src='/images/orderindex.jpg' class='demo-img'></image>
 </view>
-<view wx:if="{{isConnect!=false}}">
+<view wx:if="{{isConnect!=false && maxsize_report_index != false}}">
     <button class='btn1' open-type='openSetting' bindtap='toStuReportPage' data-id='0'>
         <view>{{attribute[0]}}</view>
      </button>
 </view>
+<view wx:if="{{isConnect!=false && maxsize_report_index == false}}">
+    <view class='main'>今日生活区报障已满</view>
+    <view class='main'>请明天再来</view>
+</view>
+
 <view wx:if="{{isConnect!=false}}">
   <navigator url="/pages/application/tea" hover-class="navigator-hover">
     <button class='btn1' open-type='openSetting' bindtap='toTeaReportPage' data-id="1">
