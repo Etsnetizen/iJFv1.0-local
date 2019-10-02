@@ -6,7 +6,7 @@ from common.models.Image import Image
 from common.libs.UploadService import UploadService
 from common.libs.UrlManager import UrlManager
 from common.models.report.Report import Report
-from common.libs.Helper import getCurrentDate
+from common.libs.Helper import getCurrentDate,Check_If_Exceed_Maxsize
 @route_api.route('/index/connect')
 def connect():
     resp = {'code':200,'msg':'连接成功','data':{} }
@@ -130,4 +130,21 @@ def uploadImage():
     db.session.commit()
     resp['data']['url'] = UrlManager.buildImageUrl(ret['data']['file_key'])
     resp['data']['random_code'] = ret['data']['random_code']
+    return jsonify( resp )
+
+
+@route_api.route('/index/check')
+def check():
+    resp = {'code':200,'msg':'连接成功','data':{} }
+    ret = Check_If_Exceed_Maxsize()
+    if ret == False:
+        resp['code'] = -1
+        resp['msg'] = '今日报障数量已满，请明天再来，教师报障不受影响'
+        return jsonify( resp )
+
+
+
+
+
+
     return jsonify( resp )
